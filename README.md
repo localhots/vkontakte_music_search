@@ -10,6 +10,7 @@ vk_music.search "Kasabian", "L.S.F. (Lost Souls Forever)", "2:17", (url) ->
   audio.setAttribute "src", url
   document.getElementsByTagName("body")[0].appendChild audio
   audio.play()
+  false
 ```
 
 ### JavaScript example
@@ -21,6 +22,7 @@ vk_music.search("Kasabian", "L.S.F. (Lost Souls Forever)", "2:17", function(url)
   audio = document.createElement("audio");
   audio.setAttribute("src", url);
   document.getElementsByTagName("body")[0].appendChild(audio);
-  return audio.play();
+  audio.play();
+  return false;
 });
 ```

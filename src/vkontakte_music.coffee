@@ -61,10 +61,10 @@ class VkontakteMusic
     artist+" "+track.replace(/\(.*\)/i, '').split('/')[0]
   
   trim: (str) ->
-  	while str.indexOf('  ') isnt -1
-  		str = str.replace '  ', ' '
-  	if str.charAt(0) is ' '
-  		str = str.substring 1
-  	if str.charAt(str.length - 1) is ' '
-  		str = str.substring 0, str.length - 1
-  	str
+    while str.indexOf('  ') isnt -1
+      str = str.replace '  ', ' '
+    if str.charAt(0) is ' '
+      str = str.substring 1
+    if str.charAt(str.length - 1) is ' '
+      str = str.substring 0, str.length - 1
+    str
