@@ -1,3 +1,11 @@
+###
+ * Vkontakte (VK.com) API music search tool
+ * https://github.com/magnolia-fan/vkontakte_music_search
+ *
+ * Copyright 2011, Gregory Eremin
+ * Licensed under the MIT license.
+ * https://raw.github.com/magnolia-fan/vkontakte_music_search/master/LICENSE
+ ###
 class VkontakteMusic
   query_results: {}
   
