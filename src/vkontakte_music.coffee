@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * https://raw.github.com/magnolia-fan/vkontakte_music_search/master/LICENSE
  ###
-class VkontakteMusic
+class window.VkontakteMusic
   query_results: {}
   
   search: (artist, track, duration, callback, return_all = false) ->
