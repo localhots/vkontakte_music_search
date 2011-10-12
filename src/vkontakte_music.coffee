@@ -6,6 +6,7 @@
  * Licensed under the MIT license.
  * https://raw.github.com/magnolia-fan/vkontakte_music_search/master/LICENSE
  ###
+
 class window.VkontakteMusic
   query_results: {}
   
@@ -29,9 +30,9 @@ class window.VkontakteMusic
     for item, i in data
       if typeof item isnt 'object'
         continue
-      item.score = 0;
-      item.artist = this.trim(item.artist);
-      item.title = this.trim(item.title);
+      item.score = 0
+      item.artist = this.trim(item.artist)
+      item.title = this.trim(item.title)
       score = 0
       if item.artist.length > 0
         if item.artist == artist
@@ -45,14 +46,15 @@ class window.VkontakteMusic
           score += 10
         else if item.title.split(track).length is 2
           score += 5
-      if parseInt(item.duration, 10) == duration
+      if duration != 0 and parseInt(item.duration, 10) == duration
         score += 15
       else
         delta = Math.abs parseInt(item.duration, 10) - duration
         score += (10 - delta) if delta < 10
       data[i].score = score
-    if data.length > 0 and typeof data[0] isnt 'object'
-      data.splice 0, 1
+    if data.length > 0
+      if typeof data[0] isnt 'object'
+        data.splice(0, 1)
       data.sort (a, b) ->
         b.score - a.score
     data
@@ -62,9 +64,9 @@ class window.VkontakteMusic
   
   trim: (str) ->
     while str.indexOf('  ') isnt -1
-      str = str.replace '  ', ' '
+      str = str.replace('  ', ' ')
     if str.charAt(0) is ' '
-      str = str.substring 1
+      str = str.substring(1)
     if str.charAt(str.length - 1) is ' '
-      str = str.substring 0, str.length - 1
+      str = str.substring(0, str.length - 1)
     str
